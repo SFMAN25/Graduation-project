@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>منصة تنظيم المناسبات</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #8b0000;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+    }
+    nav {
+      background-color: #222;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #ff6666;
+    }
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1500&q=80') center/cover;
+      color: white;
+      border-radius: 15px;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      background-color: rgba(0,0,0,0.5);
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card h3 {
+      margin: 10px;
+      color: #8b0000;
+    }
+    .card p {
+      margin: 0 10px 15px;
+      font-size: 14px;
+    }
+    footer {
+      text-align: center;
+      background-color: #222;
+      color: white;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    footer small {
+      display: block;
+      margin-top: 5px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>منصة تنظيم المناسبات</h1>
+    <p>اربط بين منظّمي المناسبات ومقدّمي الخدمات بسهولة</p>
+  </header>
+
+  <nav>
+    <a href="#about">عن المنصة</a>
+    <a href="#services">الخدمات</a>
+    <a href="#contact">تواصل معنا</a>
+  </nav>
+
+  <section class="hero">
+    <h1>خطّط لمناسبتك بسهولة ويسر 🎉</h1>
+    <p>كل ما تحتاجه لتنظيم زفافك، عيد ميلادك، أو مؤتمرك في مكان واحد!</p>
+  </section>
+
+  <section id="about">
+    <h2>عن المنصة</h2>
+    <p>
+      تتيح منصتنا التواصل بين الأشخاص الباحثين عن تنظيم مناسباتهم ومقدمي الخدمات المختصين مثل القاعات، التصوير، الديكور، والضيافة.
+      تهدف إلى تسهيل عملية البحث والحجز بضغطة زر.
+    </p>
+  </section>
+
+  <section id="services">
+    <h2>الخدمات المتوفّرة</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80" alt="قاعة">
+        <h3>حجز القاعات</h3>
+        <p>ابحث عن القاعة المناسبة لمناسبتك حسب الموقع والسعة والتكلفة.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80" alt="تصوير">
+        <h3>التصوير الفوتوغرافي</h3>
+        <p>احجز مصور محترف لتوثيق لحظاتك الخاصة.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1565958011701-44e211f8ab3c?auto=format&fit=crop&w=800&q=80" alt="ضيافة">
+        <h3>الضيافة والتموين</h3>
+        <p>اختر من بين أفضل شركات الكاترينغ لتقديم الطعام والضيافة.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1580983237228-7763c3d9a3dc?auto=format&fit=crop&w=800&q=80" alt="ديكور">
+        <h3>الديكور والتنسيق</h3>
+        <p>صمّم ديكور مناسبتك حسب ذوقك الخاص وموضوع الحدث.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>تواصل معنا</h2>
+    <p>للتعاون أو الاستفسار يمكنك مراسلتنا عبر البريد الإلكتروني:</p>
+    <p><strong>info@occasions-platform.com</strong></p>
+  </section>
+
+  <footer>
+    <p>تصميم وتطوير: <strong>عبدالرحمن محمد فوزي</strong></p>
+    <small>مشروع تخرج تحت إشراف د. بسنت</small>
+  </footer>
+
+</body>
+</html>
