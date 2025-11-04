@@ -1,337 +1,252 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>منصة تنظيم المناسبات | مشروع تخرج</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>منصة تنظيم المناسبات — مشروع تخرج</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
 
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
+    :root{
+      --black:#0b0b0b;
+      --gold:#d4af37;
+      --muted:#9b9b9b;
+      --card:#121212;
+      --accent:#b30000;
     }
 
-    body {
-      margin: 0;
-      font-family: "Cairo", sans-serif;
-      background-color: #fafafa;
-      color: #222;
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:"Cairo",sans-serif;background:#080808;color:#eee;scroll-behavior:smooth}
+    a{color:var(--gold);text-decoration:none}
+    header{
+      position:fixed;left:0;right:0;top:0;height:72px;background:linear-gradient(90deg,rgba(0,0,0,.6),rgba(0,0,0,.4));
+      display:flex;align-items:center;justify-content:space-between;padding:12px 22px;z-index:60;border-bottom:1px solid rgba(212,175,55,0.08)
     }
-
-    header {
-      background: linear-gradient(90deg, #8b0000, #b30000);
-      color: white;
-      text-align: center;
-      padding: 1.5rem 1rem;
-      border-bottom: 4px solid #ffb6b6;
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo-mark{
+      width:48px;height:48px;border-radius:8px;background:linear-gradient(180deg,var(--accent),#8b0000);
+      display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;color:#fff;box-shadow:0 4px 18px rgba(179,0,0,0.25)
     }
+    .brand h1{margin:0;font-size:18px;color:var(--gold);letter-spacing:0.6px}
+    nav{display:flex;gap:14px;align-items:center}
+    nav a{padding:8px 10px;border-radius:8px;color:#ddd;font-weight:600}
+    nav a:hover{background:rgba(255,255,255,0.03);color:var(--gold)}
+    main{padding-top:92px}
 
-    header h1 {
-      font-size: 2rem;
-      margin-bottom: 0.3rem;
+/* Hero */
+    .hero{
+      min-height:66vh; display:flex; align-items:center; justify-content:center; position:relative;
+      background-image:url('https://i.postimg.cc/CRKtrPZt/hero.jpg');
+      background-size:cover;background-position:center center;
     }
+    .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.65))}
+    .hero-inner{position:relative;z-index:2;max-width:1100px;padding:36px;text-align:center}
+    .hero h2{margin:0;font-size:36px;color:var(--gold);font-weight:700}
+    .hero p{margin:14px 0 22px;color:#f3e9d8;font-size:18px;max-width:880px;margin-left:auto;margin-right:auto}
+    .cta{display:inline-block;background:var(--gold);color:#0b0b0b;padding:12px 22px;border-radius:28px;font-weight:700}
 
-    nav {
-      background-color: #222;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      padding: 10px;
+/* Services */
+    section{padding:54px 20px;max-width:1150px;margin:0 auto}
+    h2.section-title{color:var(--gold);margin:0 0 18px;padding-right:10px;border-right:6px solid #ffb6b6;display:inline-block}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:22px}
+    .service{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(212,175,55,0.06);border-radius:14px;overflow:hidden;padding-bottom:12px;box-shadow:0 6px 30px rgba(0,0,0,0.6)
     }
+    .service img{width:100%;height:170px;object-fit:cover;display:block}
+    .service .body{padding:12px}
+    .service h3{margin:6px 0;color:var(--gold)}
+    .service p{margin:0;color:var(--muted);font-size:14px}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
+/* Team */
+    .team-wrap{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+    .team-photo{flex:1 1 420px;border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+    .team-photo img{width:100%;height:100%;object-fit:cover;display:block}
+    .team-card{flex:1 1 420px;background:linear-gradient(180deg,#0f0f0f, #0b0b0b);border-radius:12px;padding:20px;border:1px solid rgba(212,175,55,0.06)}
+    .team-card h3{margin:0;color:var(--gold)}
+    .team-list{margin-top:12px;columns:2;gap:8px}
+    .team-list li{color:#ddd;padding:6px 0;border-bottom:1px dashed rgba(255,255,255,0.02)}
+
+/* Dedication section (separate page-like section but on same page) */
+    .dedication{
+      background:linear-gradient(180deg, rgba(139,0,0,0.06), rgba(139,0,0,0.02));
+      border-radius:12px;padding:28px;text-align:center;border:1px solid rgba(212,175,55,0.05)
     }
+    .dedication h3{color:var(--gold);margin-bottom:12px}
+    .dedication p{color:#f5ead6;max-width:880px;margin:auto;line-height:1.7}
 
-    nav a:hover {
-      color: #ff6666;
+/* Footer */
+    footer{padding:26px;background-image:url('https://i.postimg.cc/VSvJ68J4/footer.jpg');background-size:cover;background-position:center;border-top:1px solid rgba(255,255,255,0.03);margin-top:46px}
+    footer .foot-inner{background:rgba(0,0,0,0.6);padding:22px;border-radius:12px;color:#eee;max-width:1100px;margin:0 auto;text-align:center}
+    footer p{margin:6px 0;color:#ddd;font-size:14px}
+    footer small{color:#c6b9a2;display:block;margin-top:8px}
+
+/* Responsive */
+    @media (max-width:900px){
+      .hero h2{font-size:26px}
+      .hero p{font-size:15px}
+      .team-list{columns:1}
     }
-
-    .hero {
-      background: url("https://images.unsplash.com/photo-1607083206869-26c3a3be7e82?auto=format&fit=crop&w=1600&q=80")
-        center/cover no-repeat;
-      color: white;
-      text-align: center;
-      padding: 5rem 1rem;
-      border-radius: 0 0 25px 25px;
-      position: relative;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.55);
-      border-radius: 0 0 25px 25px;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      color: #ffdede;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-    }
-
-    section {
-      padding: 3rem 1rem;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    section h2 {
-      color: #8b0000;
-      border-right: 6px solid #ff6666;
-      padding-right: 10px;
-      margin-bottom: 1rem;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .card {
-      background: white;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-
-    .card:hover {
-      transform: scale(1.03);
-    }
-
-    .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .card h3 {
-      color: #8b0000;
-      margin: 10px;
-    }
-
-    .card p {
-      margin: 0 10px 15px;
-      color: #555;
-    }
-
-    .auth-section {
-      background-color: #fff;
-      border-radius: 15px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      padding: 2rem;
-      margin-top: 3rem;
-      text-align: center;
-    }
-
-    .auth-section input,
-    .auth-section select {
-      width: 90%;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
-
-    .auth-section button {
-      background-color: #8b0000;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
-    .auth-section button:hover {
-      background-color: #a00000;
-    }
-
-    .team {
-      background-color: #fff4f4;
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    .team ul {
-      list-style: none;
-      padding: 0;
-      columns: 2;
-    }
-
-    .team li {
-      padding: 5px 0;
-    }
-
-    .dedication {
-      background-color: #8b0000;
-      color: white;
-      border-radius: 15px;
-      padding: 2rem;
-      text-align: center;
-      font-size: 1.1rem;
-      margin-top: 2rem;
-    }
-
-    footer {
-      background-color: #222;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-
-    footer small {
-      color: #ccc;
-    }
-
-    @media(max-width:600px){
-      .team ul { columns: 1; }
+    @media (max-width:560px){
+      header{padding:10px}
+      nav{display:none}
+      .mobile-nav-toggle{display:inline-block}
     }
   </style>
 </head>
-
 <body>
+
   <header>
-    <h1>منصة تنظيم المناسبات</h1>
-    <p>لربط منظّمي المناسبات بمقدّمي الخدمات — مشروع تخرج د. بسنت</p>
+    <div class="brand">
+      <div class="logo-mark">GV</div>
+      <div>
+        <h1>منصة تنظيم المناسبات</h1>
+        <div style="font-size:12px;color:#d1c4a6">مشروع تخرج — تصميم وتطوير: <strong>عبدالرحمن محمد فوزي</strong></div>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#home">الرئيسية</a>
+      <a href="#services">الخدمات</a>
+      <a href="#team">الفريق</a>
+      <a href="#dedication">الإهداء</a>
+      <a href="#contact">تواصل</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#about">عن المشروع</a>
-    <a href="#services">الخدمات</a>
-    <a href="#auth">التسجيل</a>
-    <a href="#team">فريق العمل</a>
-    <a href="#dedication">الإهداء</a>
-  </nav>
+  <main>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>منصتك المثالية لتنظيم المناسبات ✨</h1>
-      <p>منصة تربط بين منظّمي المناسبات ومقدّمي الخدمات في مكان واحد بسهولة وأمان.</p>
-    </div>
-  </section>
-
-  <section id="about">
-    <h2>عن المشروع</h2>
-    <p>
-      هذا المشروع يهدف إلى بناء منصة إلكترونية تساعد الأفراد على تنظيم مناسباتهم بسهولة،
-      سواء كانت حفلات زفاف، أعياد ميلاد، أو مؤتمرات، من خلال ربطهم بمقدمي الخدمات المناسبين.
-    </p>
-  </section>
-
-  <section id="services">
-    <h2>الخدمات</h2>
-    <div class="cards">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1522008342704-8c03f3a1e8d1?auto=format&fit=crop&w=900&q=80" alt="قاعة">
-        <h3>حجز القاعات</h3>
-        <p>ابحث عن القاعات المناسبة حسب السعة والموقع.</p>
+    <!-- Hero / Home -->
+    <section id="home" class="hero" aria-label="الصفحة الرئيسية">
+      <div class="hero-inner">
+        <h2>منصتك المثالية لتنظيم المناسبات ✨</h2>
+        <p>نربط منظمي المناسبات بمقدمي الخدمات (قاعات، تصوير، ديكور، تموين) بسهولة وأمان — خطط لمناسبتك في خطوات بسيطة.</p>
+        <a class="cta" href="#services">اكتشف الخدمات</a>
       </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c1f?auto=format&fit=crop&w=900&q=80" alt="تصوير">
-        <h3>التصوير الفوتوغرافي</h3>
-        <p>احجز مصورين محترفين لتوثيق أجمل لحظاتك.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=900&q=80" alt="ديكور">
-        <h3>الديكور</h3>
-        <p>اختيار وتصميم ديكور الحدث بما يناسب ذوقك.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=900&q=80" alt="ضيافة">
-        <h3>الضيافة والتموين</h3>
-        <p>أفضل شركات الكاترينغ لتقديم الضيافة والطعام.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="auth" class="auth-section">
-    <h2>تسجيل الدخول / إنشاء حساب</h2>
-    <select id="userType">
-      <option value="client">منظم مناسبة</option>
-      <option value="provider">مقدم خدمة</option>
-    </select>
-    <input type="text" id="username" placeholder="اسم المستخدم" />
-    <input type="password" id="password" placeholder="كلمة المرور" />
-    <div>
-      <button onclick="login()">تسجيل الدخول</button>
-      <button onclick="signup()">إنشاء حساب</button>
-    </div>
-    <p id="authMessage" style="color:green;font-weight:bold;"></p>
-  </section>
+    <!-- Services -->
+    <section id="services" aria-label="الخدمات">
+      <h2 class="section-title">الخدمات</h2>
+      <div class="services-grid" role="list">
+        <article class="service" role="listitem" aria-labelledby="s1">
+          <img src="https://i.postimg.cc/VSqVd321/service-wedding.jpg" alt="تنظيم الزفاف">
+          <div class="body">
+            <h3 id="s1">حجز وتنظيم الزفاف</h3>
+            <p>خدمة كاملة لتنظيم الزفاف: تنسيق القاعة، الكوشة، والتنسيق العام حسب ميزانيتك.</p>
+          </div>
+        </article>
 
-  <section id="team" class="team">
-    <h2>فريق المشروع</h2>
-    <p><strong>تصميم وتطوير:</strong> عبدالرحمن محمد فوزي</p>
-    <h3>المشاركون في المشروع:</h3>
-    <ul>
-      <li>عبدالرحمن جابر</li>
-      <li>يوسف محسن</li>
-      <li>ضياء أحمد</li>
-      <li>نسمة حسن</li>
-      <li>نسمة سليمان</li>
-      <li>آية حامد</li>
-      <li>جهاد نور</li>
-      <li>أمنية محمد</li>
-      <li>فاطمة سمير</li>
-      <li>نعمة سعيد</li>
-      <li>أسيل أيمن</li>
-    </ul>
-  </section>
+        <article class="service" role="listitem" aria-labelledby="s2">
+          <img src="https://i.postimg.cc/1grv9DNQ/service-photo.jpg" alt="خدمة التصوير">
+          <div class="body">
+            <h3 id="s2">التصوير الفوتوغرافي وتوثيق الحفل</h3>
+            <p>احجز مصورين محترفين لتوثيق التفاصيل بأعلى جودة (فوتو ـ فيديو).</p>
+          </div>
+        </article>
 
-  <section id="dedication" class="dedication">
-    <h2>إهداء</h2>
-    <p>
-      نهدي هذا المشروع بكل فخر وتقدير إلى <strong>الدكتورة بسنت</strong>  
-      التي كانت لنا خير داعم وملهمة خلال مسيرتنا التعليمية،  
-      فشكرًا لها على عطائها، توجيهها، وثقتها بنا ❤️
-    </p>
-  </section>
+        <article class="service" role="listitem" aria-labelledby="s3">
+          <img src="https://i.postimg.cc/m1z3F9hY/service-catering.jpg" alt="الكيترينج">
+          <div class="body">
+            <h3 id="s3">التموين والكاترينج</h3>
+            <p>اختيار قوائم طعام مميزة وتنسيق بوفيه راقٍ يتناسب مع نوع المناسبة والضيوف.</p>
+          </div>
+        </article>
+
+        <article class="service" role="listitem" aria-labelledby="s4">
+          <img src="https://i.postimg.cc/CRKtrPZt/hero.jpg" alt="استشارات تنظيم">
+          <div class="body">
+            <h3 id="s4">استشارات تنظيمية وديكورية</h3>
+            <p>نقدّم اقتراحات ديكور واختيارات تصميمية لنجعل مناسبتك فريدة.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section id="team" aria-label="الفريق">
+      <h2 class="section-title">فريق المشروع</h2>
+      <div class="team-wrap">
+        <div class="team-photo">
+          <img src="https://i.postimg.cc/ZWV94RKM/team.jpg" alt="صورة الفريق">
+        </div>
+        <div class="team-card" role="region" aria-labelledby="team-title">
+          <h3 id="team-title">تصميم وتطوير</h3>
+          <p style="color:#ddd;margin-top:8px">المصمم الرئيسي: <strong style="color:var(--gold)">عبدالرحمن محمد فوزي</strong></p>
+
+          <h4 style="color:var(--gold);margin-top:14px">المشاركون في المشروع</h4>
+          <ul class="team-list" aria-label="قائمة أعضاء الفريق">
+            <li>عبدالرحمن جابر</li>
+            <li>يوسف محسن</li>
+            <li>ضياء أحمد</li>
+            <li>نسمة حسن</li>
+            <li>نسمة سليمان</li>
+            <li>آية حامد</li>
+            <li>جهاد نور</li>
+            <li>أمنية محمد</li>
+            <li>فاطمة سمير</li>
+            <li>نعمة سعيد</li>
+            <li>أسيل أيمن</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dedication (own section/page-like) -->
+    <section id="dedication" aria-label="الإهداء">
+      <h2 class="section-title">إهداء</h2>
+      <div class="dedication" role="article" aria-labelledby="ded-title">
+        <h3 id="ded-title">إهداء إلى الدكتورة بسنت</h3>
+        <p>
+          “إهداء إلى الدكتورة بسنت،<br>
+          شكرًا على دعمكم وإشرافكم الكريم في مشروعنا،<br>
+          كان لتوجيهاتكم الأثر الأكبر في نجاح هذا العمل.”
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact & small footer CTA -->
+    <section id="contact" aria-label="تواصل">
+      <h2 class="section-title">تواصل معنا</h2>
+      <p style="color:#d7c9a5">للتعاون أو أي استفسار بخصوص المشروع أو منصة التنظيم، تواصل عبر البريد الإلكتروني:</p>
+      <p style="color:#fff;font-weight:700">info@occasions-platform.com</p>
+      <p style="margin-top:10px;color:var(--muted)">عرض تجريبي للموقع قابل للتطوير لمرحلة الإنتاج.</p>
+    </section>
+
+  </main>
 
   <footer>
-    <p>© جميع الحقوق محفوظة 2025 — منصة تنظيم المناسبات</p>
-    <small>مشروع تخرج بإشراف د. بسنت — تصميم عبدالرحمن محمد فوزي وفريق العمل</small>
+    <div class="foot-inner">
+      <p>تصميم وتطوير: <strong>عبدالرحمن محمد فوزي</strong> — مشروع تخرج بإشراف د. بسنت</p>
+      <small>جميع الحقوق محفوظة © 2025 — منصة تنظيم المناسبات</small>
+    </div>
   </footer>
 
+  <!-- Simple script to highlight active nav link on scroll -->
   <script>
-    function signup() {
-      const user = document.getElementById("username").value;
-      const pass = document.getElementById("password").value;
-      const type = document.getElementById("userType").value;
-      if (!user || !pass) return alert("يرجى إدخال البيانات كاملة");
-      localStorage.setItem(user, JSON.stringify({ pass, type }));
-      document.getElementById("authMessage").textContent = "تم إنشاء الحساب بنجاح 🎉";
-    }
+    const sections = document.querySelectorAll('main section[id]');
+    const navLinks = document.querySelectorAll('header nav a');
 
-    function login() {
-      const user = document.getElementById("username").value;
-      const pass = document.getElementById("password").value;
-      const data = localStorage.getItem(user);
-      if (!data) return alert("المستخدم غير موجود");
-      const u = JSON.parse(data);
-      if (u.pass === pass) {
-        document.getElementById("authMessage").textContent = "تم تسجيل الدخول بنجاح ✅ (" + u.type + ")";
-      } else alert("كلمة المرور غير صحيحة");
+    function onScroll(){
+      const y = window.scrollY + 120;
+      sections.forEach(sec=>{
+        const top = sec.offsetTop;
+        const h = sec.offsetHeight;
+        const id = sec.getAttribute('id');
+        if(y >= top && y < top + h){
+          navLinks.forEach(a=> a.classList.remove('active'));
+          const link = document.querySelector('header nav a[href="#'+id+'"]');
+          if(link) link.classList.add('active');
+        }
+      })
     }
+    window.addEventListener('scroll', onScroll);
+    // smooth behavior for older browsers fallback
+    document.querySelectorAll('header nav a').forEach(a=>{
+      a.addEventListener('click', e=>{
+        // no special handling needed; anchor + CSS smooth scrolling works
+      })
+    })
   </script>
 </body>
 </html>
