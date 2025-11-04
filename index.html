@@ -3,28 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>منصة تنظيم المناسبات</title>
+  <title>منصة تنظيم المناسبات | مشروع تخرج</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: "Cairo", sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
+      background-color: #fafafa;
+      color: #222;
     }
 
     header {
-      background-color: #8b0000;
+      background: linear-gradient(90deg, #8b0000, #b30000);
       color: white;
       text-align: center;
-      padding: 1rem 0;
+      padding: 1.5rem 1rem;
+      border-bottom: 4px solid #ffb6b6;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.3rem;
     }
 
     nav {
       background-color: #222;
       display: flex;
       justify-content: center;
-      gap: 20px;
+      flex-wrap: wrap;
+      gap: 15px;
       padding: 10px;
     }
 
@@ -32,6 +45,7 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
+      transition: 0.3s;
     }
 
     nav a:hover {
@@ -39,46 +53,67 @@
     }
 
     .hero {
-      text-align: center;
-      padding: 3rem 1rem;
-      background: url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1500&q=80")
-        center/cover;
+      background: url("https://images.unsplash.com/photo-1607083206869-26c3a3be7e82?auto=format&fit=crop&w=1600&q=80")
+        center/cover no-repeat;
       color: white;
-      border-radius: 15px;
-      margin: 1rem;
+      text-align: center;
+      padding: 5rem 1rem;
+      border-radius: 0 0 25px 25px;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.55);
+      border-radius: 0 0 25px 25px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
     }
 
     .hero h1 {
       font-size: 2.5rem;
-      background-color: rgba(0, 0, 0, 0.5);
-      display: inline-block;
-      padding: 10px 20px;
-      border-radius: 10px;
+      color: #ffdede;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 10px;
     }
 
     section {
-      padding: 2rem;
-      max-width: 1000px;
+      padding: 3rem 1rem;
+      max-width: 1100px;
       margin: auto;
+    }
+
+    section h2 {
+      color: #8b0000;
+      border-right: 6px solid #ff6666;
+      padding-right: 10px;
+      margin-bottom: 1rem;
     }
 
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1.5rem;
-      margin-top: 2rem;
     }
 
     .card {
       background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
       overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       transition: transform 0.3s;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: scale(1.03);
     }
 
     .card img {
@@ -88,20 +123,19 @@
     }
 
     .card h3 {
-      margin: 10px;
       color: #8b0000;
+      margin: 10px;
     }
 
     .card p {
       margin: 0 10px 15px;
-      font-size: 14px;
+      color: #555;
     }
 
-    /* ---------- login / signup ---------- */
     .auth-section {
       background-color: #fff;
       border-radius: 15px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       padding: 2rem;
       margin-top: 3rem;
       text-align: center;
@@ -130,138 +164,173 @@
       background-color: #a00000;
     }
 
-    footer {
+    .team {
+      background-color: #fff4f4;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .team ul {
+      list-style: none;
+      padding: 0;
+      columns: 2;
+    }
+
+    .team li {
+      padding: 5px 0;
+    }
+
+    .dedication {
+      background-color: #8b0000;
+      color: white;
+      border-radius: 15px;
+      padding: 2rem;
       text-align: center;
+      font-size: 1.1rem;
+      margin-top: 2rem;
+    }
+
+    footer {
       background-color: #222;
       color: white;
+      text-align: center;
       padding: 1rem;
       margin-top: 2rem;
     }
 
     footer small {
-      display: block;
-      margin-top: 5px;
-      color: #aaa;
+      color: #ccc;
+    }
+
+    @media(max-width:600px){
+      .team ul { columns: 1; }
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1>منصة تنظيم المناسبات</h1>
-    <p>اربط بين منظّمي المناسبات ومقدّمي الخدمات بسهولة</p>
+    <p>لربط منظّمي المناسبات بمقدّمي الخدمات — مشروع تخرج د. بسنت</p>
   </header>
 
   <nav>
-    <a href="#about">عن المنصة</a>
+    <a href="#about">عن المشروع</a>
     <a href="#services">الخدمات</a>
-    <a href="#auth">تسجيل الدخول</a>
-    <a href="#contact">تواصل معنا</a>
+    <a href="#auth">التسجيل</a>
+    <a href="#team">فريق العمل</a>
+    <a href="#dedication">الإهداء</a>
   </nav>
 
   <section class="hero">
-    <h1>خطّط لمناسبتك بسهولة ويسر 🎉</h1>
-    <p>كل ما تحتاجه لتنظيم زفافك، عيد ميلادك، أو مؤتمرك في مكان واحد!</p>
+    <div class="hero-content">
+      <h1>منصتك المثالية لتنظيم المناسبات ✨</h1>
+      <p>منصة تربط بين منظّمي المناسبات ومقدّمي الخدمات في مكان واحد بسهولة وأمان.</p>
+    </div>
   </section>
 
   <section id="about">
-    <h2>عن المنصة</h2>
+    <h2>عن المشروع</h2>
     <p>
-      تتيح منصتنا التواصل بين الأشخاص الباحثين عن تنظيم مناسباتهم ومقدمي الخدمات المختصين مثل القاعات، التصوير، الديكور، والضيافة.
-      تهدف إلى تسهيل عملية البحث والحجز بضغطة زر.
+      هذا المشروع يهدف إلى بناء منصة إلكترونية تساعد الأفراد على تنظيم مناسباتهم بسهولة،
+      سواء كانت حفلات زفاف، أعياد ميلاد، أو مؤتمرات، من خلال ربطهم بمقدمي الخدمات المناسبين.
     </p>
   </section>
 
   <section id="services">
-    <h2>الخدمات المتوفّرة</h2>
+    <h2>الخدمات</h2>
     <div class="cards">
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80" alt="قاعة" />
+        <img src="https://images.unsplash.com/photo-1522008342704-8c03f3a1e8d1?auto=format&fit=crop&w=900&q=80" alt="قاعة">
         <h3>حجز القاعات</h3>
-        <p>ابحث عن القاعة المناسبة لمناسبتك حسب الموقع والسعة والتكلفة.</p>
+        <p>ابحث عن القاعات المناسبة حسب السعة والموقع.</p>
       </div>
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80" alt="تصوير" />
+        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c1f?auto=format&fit=crop&w=900&q=80" alt="تصوير">
         <h3>التصوير الفوتوغرافي</h3>
-        <p>احجز مصور محترف لتوثيق لحظاتك الخاصة.</p>
+        <p>احجز مصورين محترفين لتوثيق أجمل لحظاتك.</p>
       </div>
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1565958011701-44e211f8ab3c?auto=format&fit=crop&w=800&q=80" alt="ضيافة" />
+        <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=900&q=80" alt="ديكور">
+        <h3>الديكور</h3>
+        <p>اختيار وتصميم ديكور الحدث بما يناسب ذوقك.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=900&q=80" alt="ضيافة">
         <h3>الضيافة والتموين</h3>
-        <p>اختر من بين أفضل شركات الكاترينغ لتقديم الطعام والضيافة.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1580983237228-7763c3d9a3dc?auto=format&fit=crop&w=800&q=80" alt="ديكور" />
-        <h3>الديكور والتنسيق</h3>
-        <p>صمّم ديكور مناسبتك حسب ذوقك الخاص وموضوع الحدث.</p>
+        <p>أفضل شركات الكاترينغ لتقديم الضيافة والطعام.</p>
       </div>
     </div>
   </section>
 
-  <!-- تسجيل الدخول / التسجيل -->
   <section id="auth" class="auth-section">
     <h2>تسجيل الدخول / إنشاء حساب</h2>
-    <p>اختر نوع المستخدم:</p>
     <select id="userType">
-      <option value="client">منظّم مناسبة</option>
+      <option value="client">منظم مناسبة</option>
       <option value="provider">مقدم خدمة</option>
     </select>
-
     <input type="text" id="username" placeholder="اسم المستخدم" />
     <input type="password" id="password" placeholder="كلمة المرور" />
-
     <div>
       <button onclick="login()">تسجيل الدخول</button>
-      <button onclick="signup()">إنشاء حساب جديد</button>
+      <button onclick="signup()">إنشاء حساب</button>
     </div>
-
-    <p id="authMessage" style="color: green; font-weight: bold; margin-top: 10px;"></p>
+    <p id="authMessage" style="color:green;font-weight:bold;"></p>
   </section>
 
-  <section id="contact">
-    <h2>تواصل معنا</h2>
-    <p>للتعاون أو الاستفسار يمكنك مراسلتنا عبر البريد الإلكتروني:</p>
-    <p><strong>info@occasions-platform.com</strong></p>
+  <section id="team" class="team">
+    <h2>فريق المشروع</h2>
+    <p><strong>تصميم وتطوير:</strong> عبدالرحمن محمد فوزي</p>
+    <h3>المشاركون في المشروع:</h3>
+    <ul>
+      <li>عبدالرحمن جابر</li>
+      <li>يوسف محسن</li>
+      <li>ضياء أحمد</li>
+      <li>نسمة حسن</li>
+      <li>نسمة سليمان</li>
+      <li>آية حامد</li>
+      <li>جهاد نور</li>
+      <li>أمنية محمد</li>
+      <li>فاطمة سمير</li>
+      <li>نعمة سعيد</li>
+      <li>أسيل أيمن</li>
+    </ul>
+  </section>
+
+  <section id="dedication" class="dedication">
+    <h2>إهداء</h2>
+    <p>
+      نهدي هذا المشروع بكل فخر وتقدير إلى <strong>الدكتورة بسنت</strong>  
+      التي كانت لنا خير داعم وملهمة خلال مسيرتنا التعليمية،  
+      فشكرًا لها على عطائها، توجيهها، وثقتها بنا ❤️
+    </p>
   </section>
 
   <footer>
-    <p>تصميم وتطوير: <strong>عبدالرحمن محمد فوزي</strong></p>
-    <small>مشروع تخرج تحت إشراف د. بسنت</small>
+    <p>© جميع الحقوق محفوظة 2025 — منصة تنظيم المناسبات</p>
+    <small>مشروع تخرج بإشراف د. بسنت — تصميم عبدالرحمن محمد فوزي وفريق العمل</small>
   </footer>
 
   <script>
-    // وظائف التسجيل البسيطة باستخدام localStorage
     function signup() {
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
       const type = document.getElementById("userType").value;
-
-      if (!username || !password) {
-        alert("يرجى إدخال جميع البيانات!");
-        return;
-      }
-
-      localStorage.setItem(username, JSON.stringify({ password, type }));
-      document.getElementById("authMessage").textContent =
-        "تم إنشاء الحساب بنجاح 🎉";
+      if (!user || !pass) return alert("يرجى إدخال البيانات كاملة");
+      localStorage.setItem(user, JSON.stringify({ pass, type }));
+      document.getElementById("authMessage").textContent = "تم إنشاء الحساب بنجاح 🎉";
     }
 
     function login() {
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
-
-      const user = localStorage.getItem(username);
-      if (!user) {
-        alert("المستخدم غير موجود!");
-        return;
-      }
-
-      const data = JSON.parse(user);
-      if (data.password === password) {
-        document.getElementById("authMessage").textContent =
-          "تم تسجيل الدخول بنجاح ✅ (" + data.type + ")";
-      } else {
-        alert("كلمة المرور غير صحيحة!");
-      }
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      const data = localStorage.getItem(user);
+      if (!data) return alert("المستخدم غير موجود");
+      const u = JSON.parse(data);
+      if (u.pass === pass) {
+        document.getElementById("authMessage").textContent = "تم تسجيل الدخول بنجاح ✅ (" + u.type + ")";
+      } else alert("كلمة المرور غير صحيحة");
     }
   </script>
 </body>
