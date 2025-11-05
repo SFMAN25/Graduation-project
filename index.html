@@ -6,7 +6,6 @@
   <title>منصة تنظيم المناسبات — مشروع تخرج</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
-
     :root{
       --black:#0b0b0b;
       --gold:#d4af37;
@@ -14,7 +13,6 @@
       --card:#121212;
       --accent:#b30000;
     }
-
     *{box-sizing:border-box}
     html,body{height:100%;margin:0;font-family:"Cairo",sans-serif;background:#080808;color:#eee;scroll-behavior:smooth}
     a{color:var(--gold);text-decoration:none}
@@ -33,7 +31,6 @@
     nav a:hover{background:rgba(255,255,255,0.03);color:var(--gold)}
     main{padding-top:92px}
 
-/* Hero */
     .hero{
       min-height:66vh; display:flex; align-items:center; justify-content:center; position:relative;
       background-image:url('https://i.postimg.cc/CRKtrPZt/hero.jpg');
@@ -45,7 +42,6 @@
     .hero p{margin:14px 0 22px;color:#f3e9d8;font-size:18px;max-width:880px;margin-left:auto;margin-right:auto}
     .cta{display:inline-block;background:var(--gold);color:#0b0b0b;padding:12px 22px;border-radius:28px;font-weight:700}
 
-/* Services */
     section{padding:54px 20px;max-width:1150px;margin:0 auto}
     h2.section-title{color:var(--gold);margin:0 0 18px;padding-right:10px;border-right:6px solid #ffb6b6;display:inline-block}
     .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:22px}
@@ -58,7 +54,6 @@
     .service h3{margin:6px 0;color:var(--gold)}
     .service p{margin:0;color:var(--muted);font-size:14px}
 
-/* Team */
     .team-wrap{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
     .team-photo{flex:1 1 420px;border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.6)}
     .team-photo img{width:100%;height:100%;object-fit:cover;display:block}
@@ -67,7 +62,6 @@
     .team-list{margin-top:12px;columns:2;gap:8px}
     .team-list li{color:#ddd;padding:6px 0;border-bottom:1px dashed rgba(255,255,255,0.02)}
 
-/* Dedication section (separate page-like section but on same page) */
     .dedication{
       background:linear-gradient(180deg, rgba(139,0,0,0.06), rgba(139,0,0,0.02));
       border-radius:12px;padding:28px;text-align:center;border:1px solid rgba(212,175,55,0.05)
@@ -75,22 +69,15 @@
     .dedication h3{color:var(--gold);margin-bottom:12px}
     .dedication p{color:#f5ead6;max-width:880px;margin:auto;line-height:1.7}
 
-/* Footer */
     footer{padding:26px;background-image:url('https://i.postimg.cc/VSvJ68J4/footer.jpg');background-size:cover;background-position:center;border-top:1px solid rgba(255,255,255,0.03);margin-top:46px}
     footer .foot-inner{background:rgba(0,0,0,0.6);padding:22px;border-radius:12px;color:#eee;max-width:1100px;margin:0 auto;text-align:center}
     footer p{margin:6px 0;color:#ddd;font-size:14px}
     footer small{color:#c6b9a2;display:block;margin-top:8px}
 
-/* Responsive */
     @media (max-width:900px){
       .hero h2{font-size:26px}
       .hero p{font-size:15px}
       .team-list{columns:1}
-    }
-    @media (max-width:560px){
-      header{padding:10px}
-      nav{display:none}
-      .mobile-nav-toggle{display:inline-block}
     }
   </style>
 </head>
@@ -104,7 +91,6 @@
         <div style="font-size:12px;color:#d1c4a6">مشروع تخرج — تصميم وتطوير: <strong>عبدالرحمن محمد فوزي</strong></div>
       </div>
     </div>
-
     <nav>
       <a href="#home">الرئيسية</a>
       <a href="#services">الخدمات</a>
@@ -116,137 +102,76 @@
 
   <main>
 
-    <!-- Hero / Home -->
-    <section id="home" class="hero" aria-label="الصفحة الرئيسية">
+    <section id="home" class="hero">
       <div class="hero-inner">
         <h2>منصتك المثالية لتنظيم المناسبات ✨</h2>
-        <p>نربط منظمي المناسبات بمقدمي الخدمات (قاعات، تصوير، ديكور، تموين) بسهولة وأمان — خطط لمناسبتك في خطوات بسيطة.</p>
+        <p>نربط منظمي المناسبات بمقدمي الخدمات بسهولة وأمان — خطط لمناسبتك في خطوات بسيطة.</p>
         <a class="cta" href="#services">اكتشف الخدمات</a>
       </div>
     </section>
 
-    <!-- Services -->
-    <section id="services" aria-label="الخدمات">
+    <section id="services">
       <h2 class="section-title">الخدمات</h2>
-      <div class="services-grid" role="list">
-        <article class="service" role="listitem" aria-labelledby="s1">
+      <div class="services-grid">
+        <article class="service">
           <img src="https://i.postimg.cc/VSqVd321/service-wedding.jpg" alt="تنظيم الزفاف">
-          <div class="body">
-            <h3 id="s1">حجز وتنظيم الزفاف</h3>
-            <p>خدمة كاملة لتنظيم الزفاف: تنسيق القاعة، الكوشة، والتنسيق العام حسب ميزانيتك.</p>
-          </div>
+          <div class="body"><h3>حجز وتنظيم الزفاف</h3><p>تنظيم الزفاف الكامل من القاعة إلى التفاصيل الدقيقة.</p></div>
         </article>
-
-        <article class="service" role="listitem" aria-labelledby="s2">
-          <img src="https://i.postimg.cc/1grv9DNQ/service-photo.jpg" alt="خدمة التصوير">
-          <div class="body">
-            <h3 id="s2">التصوير الفوتوغرافي وتوثيق الحفل</h3>
-            <p>احجز مصورين محترفين لتوثيق التفاصيل بأعلى جودة (فوتو ـ فيديو).</p>
-          </div>
+        <article class="service">
+          <img src="https://i.postimg.cc/1grv9DNQ/service-photo.jpg" alt="التصوير الفوتوغرافي">
+          <div class="body"><h3>التصوير الفوتوغرافي</h3><p>مصورون محترفون لتوثيق كل لحظة مميزة.</p></div>
         </article>
-
-        <article class="service" role="listitem" aria-labelledby="s3">
+        <article class="service">
           <img src="https://i.postimg.cc/m1z3F9hY/service-catering.jpg" alt="الكيترينج">
-          <div class="body">
-            <h3 id="s3">التموين والكاترينج</h3>
-            <p>اختيار قوائم طعام مميزة وتنسيق بوفيه راقٍ يتناسب مع نوع المناسبة والضيوف.</p>
-          </div>
-        </article>
-
-        <article class="service" role="listitem" aria-labelledby="s4">
-          <img src="https://i.postimg.cc/CRKtrPZt/hero.jpg" alt="استشارات تنظيم">
-          <div class="body">
-            <h3 id="s4">استشارات تنظيمية وديكورية</h3>
-            <p>نقدّم اقتراحات ديكور واختيارات تصميمية لنجعل مناسبتك فريدة.</p>
-          </div>
+          <div class="body"><h3>التموين والكاترينج</h3><p>قوائم طعام مميزة تناسب ذوق ضيوفك.</p></div>
         </article>
       </div>
     </section>
 
-    <!-- Team -->
-    <section id="team" aria-label="الفريق">
+    <section id="team">
       <h2 class="section-title">فريق المشروع</h2>
       <div class="team-wrap">
         <div class="team-photo">
-          <img src="https://i.postimg.cc/ZWV94RKM/team.jpg" alt="صورة الفريق">
+          <img src="https://i.postimg.cc/ZWV94RKM/team.jpg" alt="الفريق">
         </div>
-        <div class="team-card" role="region" aria-labelledby="team-title">
-          <h3 id="team-title">تصميم وتطوير</h3>
+        <div class="team-card">
+          <h3>تصميم وتطوير</h3>
           <p style="color:#ddd;margin-top:8px">المصمم الرئيسي: <strong style="color:var(--gold)">عبدالرحمن محمد فوزي</strong></p>
-
-          <h4 style="color:var(--gold);margin-top:14px">المشاركون في المشروع</h4>
-          <ul class="team-list" aria-label="قائمة أعضاء الفريق">
-            <li>عبدالرحمن جابر</li>
-            <li>يوسف محسن</li>
-            <li>ضياء أحمد</li>
-            <li>نسمة حسن</li>
-            <li>نسمة سليمان</li>
-            <li>آية حامد</li>
-            <li>جهاد نور</li>
-            <li>أمنية محمد</li>
-            <li>فاطمة سمير</li>
-            <li>نعمة سعيد</li>
-            <li>أسيل أيمن</li>
+          <h4 style="color:var(--gold);margin-top:14px">المشاركون</h4>
+          <ul class="team-list">
+            <li>عبدالرحمن جابر</li><li>يوسف محسن</li><li>ضياء أحمد</li><li>نسمة حسن</li><li>نسمة سليمان</li>
+            <li>آية حامد</li><li>جهاد نور</li><li>أمنية محمد</li><li>فاطمة سمير</li><li>نعمة سعيد</li><li>أسيل أيمن</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Dedication (own section/page-like) -->
-    <section id="dedication" aria-label="الإهداء">
+    <section id="dedication">
       <h2 class="section-title">إهداء</h2>
-      <div class="dedication" role="article" aria-labelledby="ded-title">
-        <h3 id="ded-title">إهداء إلى الدكتورة بسنت</h3>
+      <div class="dedication">
+        <h3>إهداء إلى الدكتورة بسنت نور الدين</h3>
         <p>
-          “إهداء إلى الدكتورة بسنت،<br>
+          “إهداء إلى الدكتورة بسنت نور الدين،<br>
           شكرًا على دعمكم وإشرافكم الكريم في مشروعنا،<br>
           كان لتوجيهاتكم الأثر الأكبر في نجاح هذا العمل.”
         </p>
       </div>
     </section>
 
-    <!-- Contact & small footer CTA -->
-    <section id="contact" aria-label="تواصل">
+    <section id="contact">
       <h2 class="section-title">تواصل معنا</h2>
-      <p style="color:#d7c9a5">للتعاون أو أي استفسار بخصوص المشروع أو منصة التنظيم، تواصل عبر البريد الإلكتروني:</p>
+      <p style="color:#d7c9a5">للتعاون أو الاستفسارات تواصل عبر البريد:</p>
       <p style="color:#fff;font-weight:700">info@occasions-platform.com</p>
-      <p style="margin-top:10px;color:var(--muted)">عرض تجريبي للموقع قابل للتطوير لمرحلة الإنتاج.</p>
     </section>
 
   </main>
 
   <footer>
     <div class="foot-inner">
-      <p>تصميم وتطوير: <strong>عبدالرحمن محمد فوزي</strong> — مشروع تخرج بإشراف د. بسنت</p>
-      <small>جميع الحقوق محفوظة © 2025 — منصة تنظيم المناسبات</small>
+      <p>تصميم وتطوير: <strong>عبدالرحمن محمد فوزي</strong> — مشروع تخرج بإشراف <strong>د. بسنت نور الدين</strong></p>
+      <small>© 2025 — منصة تنظيم المناسبات</small>
     </div>
   </footer>
-
-  <!-- Simple script to highlight active nav link on scroll -->
-  <script>
-    const sections = document.querySelectorAll('main section[id]');
-    const navLinks = document.querySelectorAll('header nav a');
-
-    function onScroll(){
-      const y = window.scrollY + 120;
-      sections.forEach(sec=>{
-        const top = sec.offsetTop;
-        const h = sec.offsetHeight;
-        const id = sec.getAttribute('id');
-        if(y >= top && y < top + h){
-          navLinks.forEach(a=> a.classList.remove('active'));
-          const link = document.querySelector('header nav a[href="#'+id+'"]');
-          if(link) link.classList.add('active');
-        }
-      })
-    }
-    window.addEventListener('scroll', onScroll);
-    // smooth behavior for older browsers fallback
-    document.querySelectorAll('header nav a').forEach(a=>{
-      a.addEventListener('click', e=>{
-        // no special handling needed; anchor + CSS smooth scrolling works
-      })
-    })
-  </script>
 </body>
 </html>
+
