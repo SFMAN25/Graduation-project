@@ -5,135 +5,150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>منصة تنظيم المناسبات | مشروع تخرج 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&family=Tajawal:wght@300;500;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Cairo', sans-serif; scroll-behavior: smooth; }
         .hero-bg {
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('http://googleusercontent.com/image_collection/image_retrieval/2078300107353205678_0');
+            background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('http://googleusercontent.com/image_collection/image_retrieval/2078300107353205678_0');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed; /* Parallax effect like Mazje */
         }
-        .gradient-text {
-            background: linear-gradient(to right, #d4af37, #fcf6ba, #d4af37);
+        .gradient-gold-text {
+            background: linear-gradient(135deg, #fbf5b7 0%, #d4af37 50%, #fbf5b7 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            font-family: 'Cairo', serif;
         }
+        .gradient-gold-bg {
+            background: linear-gradient(135deg, #d4af37 0%, #fbf5b7 100%);
+        }
+        .border-gold { border-color: #d4af37; }
+        .hover-gold:hover { color: #fbf5b7; }
+        .accent-font { font-family: 'Playfair Display', serif; }
+        .team-card { background: #1a1a1a; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .team-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2); border-color: #fbf5b7; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-black text-gray-200">
 
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
+            <div class="flex justify-between h-20 items-center">
                 <div class="flex-shrink-0 flex items-center">
-                    <span class="text-2xl font-bold text-gold-600 border-b-2 border-yellow-600">Evently</span>
+                    <span class="text-3xl font-extrabold accent-font gradient-gold-text">Evently</span>
                 </div>
                 <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8 space-x-reverse">
-                        <a href="#home" class="hover:text-yellow-600 px-3 py-2 font-medium">الرئيسية</a>
-                        <a href="#services" class="hover:text-yellow-600 px-3 py-2 font-medium">خدماتنا</a>
-                        <a href="#team" class="hover:text-yellow-600 px-3 py-2 font-medium">فريق العمل</a>
-                        <a href="#thanks" class="hover:text-yellow-600 px-3 py-2 font-medium">شكر وتقدير</a>
-                        <a href="#contact" class="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition">تواصل معنا</a>
+                    <div class="ml-10 flex items-baseline space-x-6 space-x-reverse text-gray-300">
+                        <a href="#home" class="hover-gold px-3 py-2 font-medium">الرئيسية</a>
+                        <a href="#services" class="hover-gold px-3 py-2 font-medium">خدماتنا</a>
+                        <a href="#team" class="hover-gold px-3 py-2 font-medium">فريق العمل</a>
+                        <a href="#thanks" class="hover-gold px-3 py-2 font-medium">شكر وتقدير</a>
+                        <a href="#contact" class="gradient-gold-bg text-black px-6 py-2.5 rounded-full font-bold hover:brightness-110 transition text-sm">تواصل معنا</a>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="hero-bg h-screen flex items-center justify-center text-center text-white px-4">
-        <div class="max-w-4xl">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">منصة <span class="gradient-text">تنظيم المناسبات</span> المتكاملة</h1>
-            <p class="text-lg md:text-xl mb-8 opacity-90">نحول أحلامكم إلى واقع ملموس بدقة واحترافية عالية. مشروع تخرج الفرقة الرابعة 2026.</p>
-            <div class="flex gap-4 justify-center">
-                <a href="#services" class="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-3 rounded-full font-bold transition duration-300">استكشف الخدمات</a>
-                <a href="https://seyouf.org/" target="_blank" class="bg-white/20 hover:bg-white/30 backdrop-blur-md text-white px-8 py-3 rounded-full font-bold transition duration-300 border border-white/50">موقع المعهد</a>
+    <section id="home" class="hero-bg h-screen flex items-center justify-center text-center text-white px-4 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-50 z-0"></div> <div class="max-w-4xl relative z-10">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-8 leading-tight">فخامة <span class="gradient-gold-text">تنظيم المناسبات</span> بين يديك</h1>
+            <p class="text-xl md:text-2xl mb-12 opacity-80 max-w-2xl mx-auto">نصنع لحظات لا تُنسى بأعلى معايير الجودة والاحترافية. مشروع تخرج الفرقة الرابعة 2026.</p>
+            <div class="flex gap-5 justify-center">
+                <a href="#services" class="gradient-gold-bg text-black px-10 py-4 rounded-full font-bold transition duration-300 text-lg hover:brightness-110">استكشف الخدمات</a>
+                <a href="https://seyouf.org/" target="_blank" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white px-10 py-4 rounded-full font-bold transition duration-300 border border-white/30 text-lg">موقع المعهد</a>
             </div>
         </div>
     </section>
 
-    <section id="services" class="py-20 bg-white">
+    <section id="services" class="py-24 bg-[#0a0a0a]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">خدماتنا المتميزة</h2>
-                <p class="text-gray-600">نقدم حلولاً شاملة لكل أنواع الفعاليات</p>
+            <div class="text-center mb-20">
+                <h2 class="text-4xl font-bold text-white mb-5">خدماتنا الملكية</h2>
+                <div class="w-24 h-1 gradient-gold-bg mx-auto mb-6 rounded-full"></div>
+                <p class="text-gray-400 max-w-xl mx-auto">تجهيزات شاملة بلمسة ذهبية لكل تفاصيل فعالياتكم.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-8 border rounded-2xl hover:shadow-xl transition group">
-                    <img src="http://googleusercontent.com/image_collection/image_retrieval/12441225588941401423_0" class="w-full h-48 object-cover rounded-xl mb-6">
-                    <h3 class="text-xl font-bold mb-3 group-hover:text-yellow-600">حجز القاعات</h3>
-                    <p class="text-gray-600">توفير أرقى القاعات التي تناسب جميع الأذواق والميزانيات.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="p-8 border border-gray-800 rounded-2xl bg-black hover:border-gold transition group">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/12441225588941401423_0" class="w-full h-56 object-cover rounded-xl mb-6 shadow-xl">
+                    <h3 class="text-2xl font-bold mb-4 gradient-gold-text">حجز أرقى القاعات</h3>
+                    <p class="text-gray-400">توفير قاعات فخمة وراقية تناسب جميع المناسبات الكبرى.</p>
                 </div>
-                <div class="p-8 border rounded-2xl hover:shadow-xl transition group">
-                    <img src="http://googleusercontent.com/image_collection/image_retrieval/12441225588941401423_1" class="w-full h-48 object-cover rounded-xl mb-6">
-                    <h3 class="text-xl font-bold mb-3 group-hover:text-yellow-600">خدمات التصوير</h3>
-                    <p class="text-gray-600">توثيق لحظاتكم بأحدث الكاميرات وفريق تصوير محترف.</p>
+                <div class="p-8 border border-gray-800 rounded-2xl bg-black hover:border-gold transition group">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/12441225588941401423_1" class="w-full h-56 object-cover rounded-xl mb-6 shadow-xl">
+                    <h3 class="text-2xl font-bold mb-4 gradient-gold-text">توثيق احترافي</h3>
+                    <p class="text-gray-400">فريق تصوير محترف لتوثيق كل لحظة بأحدث التقنيات.</p>
                 </div>
-                <div class="p-8 border rounded-2xl hover:shadow-xl transition group">
-                    <img src="http://googleusercontent.com/image_collection/image_retrieval/2078300107353205678_4" class="w-full h-48 object-cover rounded-xl mb-6">
-                    <h3 class="text-xl font-bold mb-3 group-hover:text-yellow-600">تنظيم المؤتمرات</h3>
-                    <p class="text-gray-600">تجهيزات لوجستية وتقنية كاملة للفعاليات الرسمية والشركات.</p>
+                <div class="p-8 border border-gray-800 rounded-2xl bg-black hover:border-gold transition group">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/2078300107353205678_4" class="w-full h-56 object-cover rounded-xl mb-6 shadow-xl">
+                    <h3 class="text-2xl font-bold mb-4 gradient-gold-text">تنظيم مؤتمرات</h3>
+                    <p class="text-gray-400">تخطيط وتنفيذ المؤتمرات الرسمية والفعاليات التجارية بدقة.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="team" class="py-20 bg-gray-50">
+    <section id="team" class="py-24 bg-black">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-4">فريق العمل</h2>
-            <p class="mb-12 text-gray-600">نخبة من طلاب الفرقة الرابعة - المعهد العالي للسيوف</p>
+            <h2 class="text-4xl font-bold mb-5 text-white">فريق النخبة</h2>
+            <div class="w-24 h-1 gradient-gold-bg mx-auto mb-6 rounded-full"></div>
+            <p class="mb-16 text-gray-400">طلاب الفرقة الرابعة - المعهد العالي للسيوف - قسم نظم معلومات</p>
             
-            <div class="mb-12 inline-block bg-white p-6 rounded-2xl shadow-md border-t-4 border-yellow-600">
-                <h3 class="text-xl font-bold text-yellow-700">المصمم والمطور الرئيسي</h3>
-                <p class="text-2xl font-extrabold mt-2 text-gray-900">عبدالرحمن محمد فوزي أحمد</p>
+            <div class="mb-16 inline-block bg-[#1a1a1a] p-8 rounded-2xl shadow-2xl border-2 border-gold transform hover:scale-105 transition">
+                <h3 class="text-xl font-bold text-gold-400 mb-2">المصمم والمطور الرئيسي</h3>
+                <p class="text-3xl font-extrabold text-white accent-font">عبدالرحمن محمد فوزي أحمد</p>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="bg-white p-4 rounded-lg shadow-sm hover:border-yellow-600 border transition">يوسف محسن عباس مرزوق</div>
-                <div class="bg-white p-4 rounded-lg shadow-sm hover:border-yellow-600 border transition">ضياء أحمد محمد قاسم صالح</div>
-                <div class="bg-white p-4 rounded-lg shadow-sm hover:border-yellow-600 border transition">عبد الرحمن جابر عباس محمد علام</div>
-                <div class="bg-white p-4 rounded-lg shadow-sm hover:border-yellow-600 border transition">نسمة عصام إبراهيم أحمد</div>
-                <div class="bg-white p-4 rounded-lg shadow-sm hover:border-yellow-600 border transition">أمنية محمد أحمد محمد عطوان</div>
-                <div class="bg-white p-4 rounded-lg shadow-sm hover:border-yellow-600 border transition">نسمة حسن سليمان سليمان</div>
-                <div class="bg-white p-4 rounded-lg shadow-sm hover:border-yellow-600 border transition">جهاد نور عبده عطية</div>
-                <div class="bg-white p-4 rounded-lg shadow-sm hover:border-yellow-600 border transition">آية حامد السيد حامد</div>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6 text-gray-100">
+                <div class="team-card p-5 rounded-xl border border-gray-800">يوسف محسن عباس مرزوق</div>
+                <div class="team-card p-5 rounded-xl border border-gray-800">ضياء أحمد محمد قاسم صالح</div>
+                <div class="team-card p-5 rounded-xl border border-gray-800">عبد الرحمن جابر عباس علام</div>
+                <div class="team-card p-5 rounded-xl border border-gray-800 hover-gold transition">نسمة عصام إبراهيم أحمد</div>
+                <div class="team-card p-5 rounded-xl border border-gray-800 hover-gold transition">أمنية محمد أحمد عطوان</div>
+                <div class="team-card p-5 rounded-xl border border-gray-800 hover-gold transition">نسمة حسن سليمان سليمان</div>
+                <div class="team-card p-5 rounded-xl border border-gray-800 hover-gold transition">جهاد نور عبده عطية</div>
+                <div class="team-card p-5 rounded-xl border border-gray-800 hover-gold transition">آية حامد السيد حامد</div>
+                <div class="team-card p-5 rounded-xl border border-gold hover-gold transition font-bold text-yellow-100 bg-gray-900">أسيل أيمن عبد الغفار</div>
+                <div class="team-card p-5 rounded-xl border border-gold hover-gold transition font-bold text-yellow-100 bg-gray-900">نعمة سعيد رجب شعبان</div>
             </div>
         </div>
     </section>
 
-    <section id="thanks" class="py-20 bg-white">
+    <section id="thanks" class="py-24 bg-[#0a0a0a]">
         <div class="max-w-4xl mx-auto px-4 text-center">
-            <div class="bg-yellow-50 border-2 border-dashed border-yellow-400 p-10 rounded-3xl relative">
-                <span class="absolute -top-6 left-1/2 -translate-x-1/2 bg-yellow-400 text-white px-6 py-2 rounded-full font-bold">شكر خاص</span>
-                <h2 class="text-2xl font-bold text-gray-800 mb-6">كلمة تقدير وعرفان</h2>
-                <p class="text-xl leading-relaxed text-gray-700 italic">
-                    "نتقدم بخالص الشكر والتقدير إلى الدكتورة الفاضلة/ <b>بسنت نور الدين</b>، المشرفة على هذا العمل، التي كانت منارة لنا بعلمها ودعمها المتواصل حتى يخرج هذا المشروع بهذا المستوى."
+            <div class="bg-black border-2 border-dashed border-gold p-12 rounded-3xl relative shadow-2xl">
+                <span class="absolute -top-6 left-1/2 -translate-x-1/2 gradient-gold-bg text-black px-8 py-2.5 rounded-full font-extrabold text-lg">شكر خاص للمشرفة</span>
+                <p class="text-2xl leading-relaxed text-gray-200 italic font-medium">
+                    "نتقدم بخالص الشكر والتقدير إلى الدكتورة الفاضلة/ <b>بسنت نور الدين</b>، المشرفة على هذا العمل، التي كانت منارة لنا بعلمها ودعمها المتواصل حتى يخرج هذا المشروع بهذا المستوى من الرقي والفخامة."
                 </p>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+    <section id="contact" class="py-24 bg-black">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center border-t border-gray-800 pt-16">
             <div>
-                <h2 class="text-3xl font-bold mb-6">مقرنا بالسيوف</h2>
-                <p class="text-gray-600 mb-4">المعهد العالي للسياحة والفنادق والحاسب الآلي - السيوف، الإسكندرية</p>
-                <div class="flex items-center gap-4 text-yellow-700 font-bold mb-4 text-lg">
-                    <span>📍</span> الإسكندرية، السيوف، 2 شارع عادل مصطفى شوقي
+                <h2 class="text-4xl font-bold mb-8 text-white">مقرنا بالسيوف</h2>
+                <div class="w-20 h-1 gradient-gold-bg mb-8 rounded-full"></div>
+                <p class="text-gray-400 mb-6 text-lg">المعهد العالي للسياحة والفنادق والحاسب الآلي - السيوف، الإسكندرية</p>
+                <div class="flex items-center gap-4 text-yellow-400 font-bold mb-6 text-xl">
+                    <span>📍</span> الإسكندرية، 2 شارع عادل مصطفى شوقي
                 </div>
-                <a href="https://seyouf.org/" target="_blank" class="text-blue-600 hover:underline">زيارة موقع المعهد الرسمي</a>
+                <a href="https://seyouf.org/" target="_blank" class="gradient-gold-text hover:underline text-lg">زيارة موقع المعهد الرسمي</a>
             </div>
-            <div class="rounded-2xl overflow-hidden shadow-2xl h-80">
+            <div class="rounded-2xl overflow-hidden shadow-2xl h-96 border border-gray-800">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3411.5!2d30.0!3d31.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5ddc4bd707fc7%3A0xe10b66526ad2fa3b!2sHigh%20Institute%20for%20Tourism%2C%20Hotels%20and%20Computer%20-%20Seiouf!5e0!3m2!1sen!2seg!4v1700000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-[#050505] text-gray-400 py-16">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-lg mb-4">مشروع تخرج الفرقة الرابعة | نظم معلومات إدارية</p>
-            <div class="h-px bg-gray-800 my-6"></div>
-            <p class="text-gray-400">جميع الحقوق محفوظة © 2025 - 2026</p>
+            <h3 class="text-2xl font-extrabold accent-font gradient-gold-text mb-4">Evently</h3>
+            <p class="text-lg mb-6">مشروع تخرج الفرقة الرابعة | نظم معلومات إدارية</p>
+            <div class="h-px bg-gray-900 my-8 max-w-xl mx-auto"></div>
+            <p class="text-gray-600">جميع الحقوق محفوظة © 2025 - 2026</p>
         </div>
     </footer>
 
