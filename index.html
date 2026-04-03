@@ -9,7 +9,6 @@
     <style>
         body { font-family: 'Cairo', sans-serif; scroll-behavior: smooth; }
         .hero-bg {
-            /* تم تحديث الصورة بالرابط الجديد الخاص بكِ */
             background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), url('https://files.catbox.moe/png5se.png');
             background-size: cover;
             background-position: center;
@@ -27,10 +26,9 @@
         .border-gold { border-color: #d4af37; }
         .hover-gold:hover { color: #fbf5b7; }
         .accent-font { font-family: 'Playfair Display', serif; }
-        .team-card { background: #1a1a1a; transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid #2d2d2d; }
-        .team-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.15); border-color: #fbf5b7; }
+        .team-card { background: #1a1a1a; transition: all 0.3s ease; border: 1px solid #2d2d2d; text-align: center; }
+        .team-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.15); border-color: #fbf5b7; color: #fff; }
         
-        /* ضبط الخريطة */
         .map-container { position: relative; padding-bottom: 75%; height: 0; overflow: hidden; border-radius: 1rem; border: 1px solid #2d2d2d; }
         .map-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
     </style>
@@ -102,21 +100,22 @@
             <p class="mb-20 text-gray-400">طلاب الفرقة الرابعة - المعهد العالي للسيوف - قسم نظم معلومات</p>
             
             <div class="mb-20 inline-block bg-[#1a1a1a] p-10 rounded-3xl shadow-2xl border-2 border-gold transform hover:scale-105 transition-transform duration-300">
-                <h3 class="text-xl font-bold text-gold-400 mb-3">المصمم والمطور الرئيسي</h3>
+                <h3 class="text-xl font-bold text-gold-400 mb-3 text-yellow-500">المصمم والمطور الرئيسي</h3>
                 <p class="text-4xl font-extrabold text-white accent-font">عبدالرحمن محمد فوزي أحمد</p>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-6 text-gray-100">
-                <div class="team-card p-6 rounded-xl flex items-center justify-center min-h-[80px]">يوسف محسن عباس مرزوق</div>
-                <div class="team-card p-6 rounded-xl flex items-center justify-center min-h-[80px]">ضياء أحمد محمد قاسم صالح</div>
-                <div class="team-card p-6 rounded-xl flex items-center justify-center min-h-[80px]">عبد الرحمن جابر عباس علام</div>
-                <div class="team-card p-6 rounded-xl flex items-center justify-center min-h-[80px]">نسمة عصام إبراهيم أحمد</div>
-                <div class="team-card p-6 rounded-xl flex items-center justify-center min-h-[80px]">أمنية محمد أحمد عطوان</div>
-                <div class="team-card p-6 rounded-xl flex items-center justify-center min-h-[80px]">نسمة حسن سليمان سليمان</div>
-                <div class="team-card p-6 rounded-xl flex items-center justify-center min-h-[80px]">جهاد نور عبده عطية</div>
-                <div class="team-card p-6 rounded-xl flex items-center justify-center min-h-[80px]">آية حامد السيد حامد</div>
-                <div class="team-card p-6 rounded-xl flex items-center justify-center min-h-[80px] font-bold text-yellow-100 bg-gray-900 border-gold/50 shadow-inner">أسيل أيمن عبد الغفار</div>
-                <div class="team-card p-6 rounded-xl flex items-center justify-center min-h-[80px] font-bold text-yellow-100 bg-gray-900 border-gold/50 shadow-inner">نعمة سعيد رجب شعبان</div>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 text-gray-100">
+                <div class="team-card p-6 rounded-xl flex items-center justify-center min-h-[100px]">فاطمه سمير حسين ابراهيم (وعد)</div>
+                <div class="team-card p-6 rounded-xl flex items-center justify-center min-h-[100px]">يوسف محسن عباس مرزوق</div>
+                <div class="team-card p-6 rounded-xl flex items-center justify-center min-h-[100px]">ضياء أحمد محمد قاسم صالح</div>
+                <div class="team-card p-6 rounded-xl flex items-center justify-center min-h-[100px]">عبد الرحمن جابر عباس علام</div>
+                <div class="team-card p-6 rounded-xl flex items-center justify-center min-h-[100px]">نسمة عصام إبراهيم أحمد</div>
+                <div class="team-card p-6 rounded-xl flex items-center justify-center min-h-[100px]">أمنية محمد أحمد عطوان</div>
+                <div class="team-card p-6 rounded-xl flex items-center justify-center min-h-[100px]">نسمة حسن سليمان سليمان</div>
+                <div class="team-card p-6 rounded-xl flex items-center justify-center min-h-[100px]">جهاد نور عبده عطية</div>
+                <div class="team-card p-6 rounded-xl flex items-center justify-center min-h-[100px]">آية حامد السيد حامد</div>
+                <div class="team-card p-6 rounded-xl flex items-center justify-center min-h-[100px] font-bold text-yellow-100 bg-gray-900 border-gold/50 shadow-inner">أسيل أيمن عبد الغفار</div>
+                <div class="team-card p-6 rounded-xl flex items-center justify-center min-h-[100px] font-bold text-yellow-100 bg-gray-900 border-gold/50 shadow-inner">نعمة سعيد رجب شعبان</div>
             </div>
         </div>
     </section>
